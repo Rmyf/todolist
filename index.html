@@ -18,7 +18,7 @@
             border-radius: 6px;
         }
         
-        button {
+        #buttdel {
             display: flex;
             align-self: flex-end;
             border-radius: 6px;
@@ -41,7 +41,7 @@
         <label for="comment">Comment:</label>
         <input id="comment" type="text" placeholder="Comment">
 
-        <button class="buttsub" type="submit">Envoyer</button>
+        <button type="submit">Envoyer</button>
 
     </form>
 
@@ -80,6 +80,7 @@
             let p = document.createElement("p");
             let titre = document.createElement("h1");
             let butt = document.createElement("button");
+            butt.id = "buttdel";
 
             p.textContent = comment;
             titre.textContent = title;

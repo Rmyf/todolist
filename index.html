@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            background-color: #f2f2f2;
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+        
+        button {
+            display: flex;
+            align-self: flex-end;
+            border-radius: 6px;
+            color: blue;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>TODO</h1>
+
+    <form method="post" action="#">
+        <aside>
+            <label for="title">Title:</label>
+            <input id="title" type="text" placeholder="Title">
+        </aside>
+
+        <label for="comment">Comment:</label>
+        <input id="comment" type="text" placeholder="Comment">
+
+        <button class="buttsub" type="submit">Envoyer</button>
+
+    </form>
+
+    <h2>List</h2>
+
+    <section id="zonetxt">
+
+
+        <div>
+            <h1>
+                Titre
+            </h1>
+            <p>
+                Comment
+            </p>
+            <button>
+    
+</button>
+
+        </div>
+
+    </section>
+
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            let title = document.querySelector("#title").value;
+            let comment = document.querySelector("#comment").value;
+            let txt = document.querySelector("#zonetxt");
+
+            // create a text block
+            let div = document.createElement("div")
+            let p = document.createElement("p");
+            let titre = document.createElement("h1");
+            let butt = document.createElement("button");
+
+            p.textContent = comment;
+            titre.textContent = title;
+            butt.textContent = "Supprimer"
+
+            txt.appendChild(div);
+            div.appendChild(titre);
+            div.appendChild(p);
+            div.appendChild(butt);
+
+            butt.addEventListener("click", function() {
+                txt.removeChild(div);
+
+            });
+            // set block content
+
+            // add block to DOM
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

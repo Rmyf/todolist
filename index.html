@@ -24,6 +24,7 @@
             border-radius: 6px;
             color: blue;
             border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -49,20 +50,6 @@
 
     <section id="zonetxt">
 
-
-        <div>
-            <h1>
-                Titre
-            </h1>
-            <p>
-                Comment
-            </p>
-            <button>
-    
-</button>
-
-        </div>
-
     </section>
 
     <script>
@@ -76,7 +63,7 @@
             let txt = document.querySelector("#zonetxt");
 
             // create a text block
-            let div = document.createElement("div")
+            let div = document.createElement("div");
             let p = document.createElement("p");
             let titre = document.createElement("h1");
             let butt = document.createElement("button");
@@ -95,11 +82,6 @@
                 txt.removeChild(div);
 
             });
-            // set block content
-
-            // add block to DOM
-
-
 
         });
     </script>

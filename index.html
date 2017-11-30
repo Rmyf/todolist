@@ -5,86 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 50%;
-            background-color: #f2f2f2;
-            border: 1px solid black;
-            border-radius: 6px;
-        }
-        
-        #buttdel {
-            display: flex;
-            align-self: flex-end;
-            border-radius: 6px;
-            color: blue;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Todo list</title>
 </head>
 
 <body>
+    <div class="container">
 
-    <h1>TODO</h1>
+        <h1>TODO List</h1>
 
-    <form method="post" action="#">
-        <aside>
-            <label for="title">Title:</label>
-            <input id="title" type="text" placeholder="Title">
-        </aside>
+        <form method="post" action="#">
+            <div class="offset-md-1 form-group row">
 
-        <label for="comment">Comment:</label>
-        <input id="comment" type="text" placeholder="Comment">
+                <div class="col-md-5 ">
+                    <input id="title" type="text" class="form-control" placeholder="Catégorie">
+                </div>
 
-        <button type="submit">Envoyer</button>
+                <div class="col-md-5 ">
+                    <input id="content" type="text" class="form-control" placeholder="Tâche">
+                </div>
 
-    </form>
 
-    <h2>Que devez-vous faire ?</h2>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
 
-    <section id="zonetxt">
 
-    </section>
 
-    <script>
-        let form = document.querySelector("form");
-        form.addEventListener("submit", function(e) {
+            </div>
+        </form>
 
-            e.preventDefault();
+        <h2>Que devez-vous faire ?</h2>
 
-            let title = document.querySelector("#title").value;
-            let comment = document.querySelector("#comment").value;
-            let txt = document.querySelector("#zonetxt");
+        <section id="zonetxt"> </section>
 
-            // create a text block
-            let div = document.createElement("div");
-            let p = document.createElement("p");
-            let titre = document.createElement("h1");
-            let butt = document.createElement("button");
-            butt.id = "buttdel";
+        <script>
+            let form = document.querySelector("form");
+            form.addEventListener("submit", function(e) {
 
-            p.textContent = comment;
-            titre.textContent = title;
-            butt.textContent = "Supprimer"
+                e.preventDefault();
 
-            txt.appendChild(div);
-            div.appendChild(titre);
-            div.appendChild(p);
-            div.appendChild(butt);
+                let title = document.querySelector("#title").value;
+                let comment = document.querySelector("#content").value;
+                let txt = document.querySelector("#zonetxt");
 
-            butt.addEventListener("click", function() {
-                txt.removeChild(div);
+                // create a text block
+                let div = document.createElement("div");
+                let p = document.createElement("p");
+                let titre = document.createElement("h1");
+                let butt = document.createElement("button");
+                butt.className = "btn btn-secondary";
+                div.className = "todotxt";
+
+
+                p.textContent = comment;
+                titre.textContent = title;
+                butt.textContent = "Supprimer"
+
+                txt.appendChild(div);
+                div.appendChild(titre);
+                div.appendChild(p);
+                div.appendChild(butt);
+
+                butt.addEventListener("click", function() {
+                    txt.removeChild(div);
+
+                });
 
             });
+        </script>
 
-        });
-    </script>
+    </div>
+
 
 </body>
 
